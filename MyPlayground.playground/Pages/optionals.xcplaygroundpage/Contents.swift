@@ -50,7 +50,7 @@ doubleValue(30)
 doubleValue(0)
 
 
-
+//Forced Unwrapping
 let possibleNumners = "123"
 let convertNumbers = Int(possibleNumners)
 print(convertNumbers!)
@@ -59,3 +59,22 @@ print(convertNumbers!)
 if let convertedNumber = convertNumbers {
     print(convertedNumber)
 }
+
+
+func doubled(_ number : Int? ) -> Int {
+    guard let number else {
+        return 0
+    }
+    return (number + number)
+}
+
+print(doubled(4))
+//
+//let optionalString = "Hello"
+//let convertString = Int(optionalString)
+//print(convertString!)
+//
+//
+//if let convertString = convertString {
+//    print(convertString)
+//}
