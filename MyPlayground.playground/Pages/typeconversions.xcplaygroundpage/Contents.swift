@@ -1,6 +1,10 @@
 let integer : Int = 24
 let double : Double = 40.5
 let convert = Double(integer) + double
+let changeDouble = 40.5
+let changetoInteger = Int(changeDouble)
+print(changeDouble)
+print(changetoInteger)
 
 print(convert)
 
@@ -11,7 +15,9 @@ print(result)
 
 
 var counter = 20
-counter += 20
 counter -= 20
+counter += 30
 print(counter)
+
+
 

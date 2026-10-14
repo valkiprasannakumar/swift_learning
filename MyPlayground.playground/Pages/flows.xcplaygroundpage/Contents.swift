@@ -1,11 +1,12 @@
+// if statement
 let age = 5
 if age >= 18 {
     print("Eligible to vote")
-} else if age < 18 {
+} else {
     print("wait until 18 years to vote")
 }
 
-
+// if else statements
 let temperature = 15
 if temperature > 30 {
     print("Hot")
@@ -15,7 +16,7 @@ if temperature > 30 {
     print("cold")
 }
 
-
+// switch statements
 let day = "Monday"
 switch day {
 case "Monday", "Tuesday" :
@@ -26,7 +27,7 @@ default :
     print(("Unknown"))
 }
 
-
+// ranges
 let score = 90
 switch score {
 case 0..<60:

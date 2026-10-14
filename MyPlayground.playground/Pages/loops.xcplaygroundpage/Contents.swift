@@ -8,10 +8,18 @@ for index in 1...5 {
     print(index)
 }
 
-
+//enunerated means index and value
 for (index , name) in names.enumerated(){
     print("\(index):\(name)")
 }
+
+for i in 1...3 {
+    print(i)
+}
+for i in stride(from: 10, to : 1, by : 1){
+    print(i)
+}
+   
 
 
 var i = 0
@@ -27,3 +35,10 @@ repeat {
     j += 1
 } while j < 5
 
+// break, continue, labeled
+outer: for i in 1...3 {
+    for j in 1...3 {
+        if j == 2 { continue outer }
+        print(i, j)
+    }
+}

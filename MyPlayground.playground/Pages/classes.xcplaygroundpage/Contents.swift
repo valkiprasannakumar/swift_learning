@@ -11,7 +11,7 @@ class Person {
     }
 }
 
-class Student : Person {
+class Students : Person {
     var school : String
     init(name : String, age : Int ,school : String) {
         self.school = school
@@ -23,11 +23,11 @@ class Student : Person {
 }
 
 
-let student = Student(name: "prasanna Kumar",age: 29,school: "HPS")
+let student = Students(name: "prasanna Kumar",age: 29,school: "HPS")
 print(student.greet())
 
 
-// protocol
+// protocols
 
 protocol Greetable {
     var name: String  { get }
@@ -43,3 +43,51 @@ struct Employee: Greetable {
 
 let emp = Employee(name: "prasanna Kumar")
 print(emp)
+
+
+protocol Vehicle {
+    var wheels: Int { get }
+    func start()
+}
+
+extension Vehicle {
+    func describe() -> String {
+        return "Vehicle with \(wheels) wheels"
+    }
+}
+
+struct Car: Vehicle {
+    let wheels: Int
+    func start() {
+        print("Car starting")
+    }
+}
+
+let car = Car(wheels: 4)
+car.start()
+print(car.describe())
+
+// Protocol composition
+protocol Named { var name: String { get } }
+protocol Aged { var age: Int { get } }
+typealias PersonProtocol = Named & Aged
+
+struct Student: PersonProtocol {
+    let name: String
+    let age: Int
+}
+
+// Associated types
+protocol Container {
+    associatedtype Item
+    mutating func append(_ item: Item)
+    var count: Int { get }
+    subscript(i: Int) -> Item { get }
+}
+
+struct IntStack: Container {
+    var items: [Int] = []
+    mutating func append(_ item: Int) { items.append(item) }
+    var count: Int { items.count }
+    subscript(i: Int) -> Int { items[i] }
+}

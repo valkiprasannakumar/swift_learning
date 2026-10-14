@@ -46,3 +46,15 @@ let addClosure = { (a: Int ,b: Int) -> Int in
 
 let err = addClosure(3,4)
 print(err)
+
+
+// Nested functions
+func outer() -> Int {
+    func inner() -> Int { return 42 }
+    return inner()
+}
+
+
+// Function types
+let mathFunction: (Int, Int) -> Int = add
+print(mathFunction(2, 3))

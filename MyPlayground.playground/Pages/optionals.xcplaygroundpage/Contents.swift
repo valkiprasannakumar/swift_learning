@@ -14,7 +14,7 @@ if let unwrapped = username {
 }
 
 
-// shorthand syntax
+// Nil coalescing
 var shorthand : String? = "Ios Developer"
 var output = shorthand ?? "justdev"
 
@@ -23,7 +23,7 @@ print(output)
 
 
 func greet(_ name : String?) {
-    guard let name else {
+    guard let name  = name else {
         print("No name provided")
         return
     }
